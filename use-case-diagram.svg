@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#263238"/>
+    </marker>
+    <style>
+      .title { font: bold 28px Arial, sans-serif; fill: #17202a; }
+      .label { font: 18px Arial, sans-serif; fill: #17202a; }
+      .small { font: 15px Arial, sans-serif; fill: #37474f; }
+      .actor { stroke: #263238; stroke-width: 2; fill: none; }
+      .uc { stroke: #1565c0; stroke-width: 2; fill: #e3f2fd; }
+      .boundary { stroke: #37474f; stroke-width: 3; fill: #fafafa; }
+      .rel { stroke: #263238; stroke-width: 1.8; fill: none; marker-end: url(#arrow); }
+      .include { stroke: #2e7d32; stroke-width: 1.8; stroke-dasharray: 8 6; fill: none; marker-end: url(#arrow); }
+      .extend { stroke: #c62828; stroke-width: 1.8; stroke-dasharray: 8 6; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1400" height="850" fill="white"/>
+  <text x="700" y="42" text-anchor="middle" class="title">Remote Patient Vitals Alert &amp; Monitoring App</text>
+
+  <rect x="300" y="75" width="1020" height="720" rx="8" class="boundary"/>
+  <text x="810" y="108" text-anchor="middle" class="label">System Boundary</text>
+
+  <!-- Actors -->
+  <g transform="translate(105 165)" class="actor">
+    <circle cx="0" cy="0" r="18"/><path d="M0 18V70 M-30 40H30 M0 70L-24 110 M0 70L24 110"/>
+    <text x="0" y="140" text-anchor="middle" class="label">Remote Patient</text>
+  </g>
+  <g transform="translate(105 430)" class="actor">
+    <circle cx="0" cy="0" r="18"/><path d="M0 18V70 M-30 40H30 M0 70L-24 110 M0 70L24 110"/>
+    <text x="0" y="140" text-anchor="middle" class="label">On-Call</text>
+    <text x="0" y="162" text-anchor="middle" class="label">Caregiver</text>
+  </g>
+  <g transform="translate(1350 190)" class="actor">
+    <rect x="-25" y="-20" width="50" height="40" rx="6"/><circle cx="-10" cy="0" r="4"/><circle cx="10" cy="0" r="4"/>
+    <text x="0" y="55" text-anchor="middle" class="label">Vital Signs</text>
+    <text x="0" y="77" text-anchor="middle" class="label">Device</text>
+  </g>
+  <g transform="translate(1350 565)" class="actor">
+    <rect x="-25" y="-20" width="50" height="40" rx="6"/><path d="M-12 0H12 M0 -12V12"/>
+    <text x="0" y="55" text-anchor="middle" class="label">Notification</text>
+    <text x="0" y="77" text-anchor="middle" class="label">Gateway</text>
+  </g>
+
+  <!-- Use cases -->
+  <g class="uc">
+    <ellipse cx="510" cy="180" rx="145" ry="38"/><ellipse cx="800" cy="180" rx="155" ry="38"/>
+    <ellipse cx="1100" cy="180" rx="145" ry="38"/>
+    <ellipse cx="510" cy="345" rx="155" ry="38"/><ellipse cx="820" cy="345" rx="145" ry="38"/>
+    <ellipse cx="1120" cy="345" rx="170" ry="38"/>
+    <ellipse cx="510" cy="520" rx="135" ry="38"/><ellipse cx="820" cy="520" rx="135" ry="38"/>
+    <ellipse cx="1080" cy="650" rx="150" ry="38"/>
+  </g>
+  <g class="label" text-anchor="middle">
+    <text x="510" y="174">Monitor Patient</text><text x="510" y="197">Vitals</text>
+    <text x="800" y="174">Ingest Vital</text><text x="800" y="197">Telemetry</text>
+    <text x="1100" y="174">Evaluate Clinical</text><text x="1100" y="197">Thresholds</text>
+    <text x="510" y="339">Generate Vital Alert</text>
+    <text x="820" y="339">Notify On-Call</text><text x="820" y="362">Caregiver</text>
+    <text x="1120" y="339">Escalate Unacknowledged</text><text x="1120" y="362">Critical Alert</text>
+    <text x="510" y="514">View Patient Vitals</text>
+    <text x="820" y="514">Acknowledge Alert</text>
+    <text x="1080" y="644">Record Care Action or Note</text>
+  </g>
+
+  <!-- Associations -->
+  <path d="M135 255 L365 180" class="rel"/><path d="M135 520 L365 520" class="rel"/>
+  <path d="M135 520 L365 345" class="rel"/><path d="M1350 267 L1250 180" class="rel"/>
+  <path d="M1350 642 L965 345" class="rel"/>
+
+  <!-- Include / extend relationships -->
+  <path d="M655 180 L645 180" class="include"/><text x="650" y="165" text-anchor="middle" class="small">&lt;&lt;include&gt;&gt;</text>
+  <path d="M945 180 L955 180" class="include"/><text x="950" y="165" text-anchor="middle" class="small">&lt;&lt;include&gt;&gt;</text>
+  <path d="M1020 218 L650 315" class="include"/><text x="820" y="253" text-anchor="middle" class="small">&lt;&lt;include&gt;&gt;</text>
+  <path d="M665 345 L675 345" class="include"/><text x="670" y="330" text-anchor="middle" class="small">&lt;&lt;include&gt;&gt;</text>
+  <path d="M965 345 L950 345" class="extend"/><text x="960" y="315" text-anchor="middle" class="small">&lt;&lt;extend&gt;&gt;</text>
+  <path d="M645 520 L685 520" class="include"/><text x="665" y="505" text-anchor="middle" class="small">&lt;&lt;include&gt;&gt;</text>
+  <path d="M955 520 L1010 625" class="extend"/><text x="1000" y="575" text-anchor="middle" class="small">&lt;&lt;extend&gt;&gt;</text>
+
+  <text x="700" y="825" text-anchor="middle" class="small">Green dashed arrows = include    |    Red dashed arrows = extend</text>
+</svg>
