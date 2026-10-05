@@ -1,46 +1,46 @@
 @startuml
-title Remote Patient Vitals Alert & Monitoring App - UML Use-Case Diagram
+title Academic Elective Bidding & Allocation System - UML Use-Case Diagram
 left to right direction
 skinparam packageStyle rectangle
 skinparam shadowing false
 
-actor "Remote Patient" as Patient
-actor "On-Call Caregiver" as Caregiver
-actor "Vital Signs Device" as Device
-actor "Notification Gateway" as Gateway
+actor Student
+actor "Academic Registrar" as Registrar
+actor "Notification Service" as Notification
 
-rectangle "Remote Patient Vitals Alert & Monitoring App" {
-  usecase "Monitor Patient Vitals" as Monitor
-  usecase "Ingest Vital Telemetry" as Ingest
-  usecase "Evaluate Clinical Thresholds" as Evaluate
-  usecase "Generate Vital Alert" as Generate
-  usecase "Notify On-Call Caregiver" as Notify
-  usecase "Escalate Unacknowledged\nCritical Alert" as Escalate
-  usecase "View Patient Vitals" as View
-  usecase "Acknowledge Alert" as Acknowledge
-  usecase "Record Care Action\nor Note" as Record
+rectangle "Academic Elective Bidding & Allocation System" {
+  usecase "Submit Elective Bids\nand Preferences" as Submit
+  usecase "Validate Credits" as Credits
+  usecase "Validate Prerequisites" as Prereq
+  usecase "View Eligible Electives" as Eligible
+  usecase "Run Elective Allocation" as Allocate
+  usecase "Resolve Capacity and\nTimetable Conflicts" as Conflicts
+  usecase "Configure Elective\nOfferings and Rules" as Configure
+  usecase "Publish Allocation\nResults" as Publish
+  usecase "Revise Draft\nPreferences" as Revise
+  usecase "Notify Students" as Notify
 }
 
-Patient --> View
-Patient --> Monitor
-Device --> Ingest
-Caregiver --> View
-Caregiver --> Acknowledge
-Caregiver --> Record
-Gateway --> Notify
+Student --> Submit
+Student --> Eligible
+Student --> Revise
+Student --> Publish
+Registrar --> Configure
+Registrar --> Allocate
+Registrar --> Publish
+Notification --> Notify
 
-Monitor .> Ingest : <<include>>
-Monitor .> Evaluate : <<include>>
-Evaluate .> Generate : <<include>>
-Generate .> Notify : <<include>>
-Escalate .> Notify : <<extend>>
-View .> Monitor : <<include>>
-Record .> Acknowledge : <<extend>>
+Submit .> Credits : <<include>>
+Submit .> Prereq : <<include>>
+Submit .> Eligible : <<include>>
+Allocate .> Conflicts : <<include>>
+Publish .> Notify : <<include>>
+Revise .> Submit : <<extend>>
 
-note right of Escalate
+note right of Revise
 Extension point:
-critical alert remains
-unacknowledged
+draft requires correction
+before final submission
 end note
 @enduml
 

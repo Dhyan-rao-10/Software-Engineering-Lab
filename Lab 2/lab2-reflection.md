@@ -2,17 +2,17 @@
 
 ## 1. Did the estimates reflect the actual effort?
 
-The estimates were reasonably aligned with the simulated effort. The smaller notification and response stories were estimated at 3 points, while telemetry ingestion, threshold evaluation, alert generation, and escalation were estimated at 5 points because they involve more rules, integration points, and failure conditions. In a real project, production integration and security testing could increase the effort.
+The estimates reflected relative complexity. Viewing eligible electives was a focused 3-point story, while credit validation, preference submission, constraint validation, and allocation were 5-point stories because they combine business rules and edge cases. Real institutional integrations could increase the effort.
 
 ## 2. Was the backlog well-prioritized?
 
-Yes. High-priority items establish the monitoring and emergency-alert path first: ingest readings, evaluate thresholds, generate alerts, notify the caregiver, and escalate when necessary. Viewing and audit-history improvements remain available in the backlog but are less urgent than detecting and communicating a potentially dangerous condition.
+Yes. The sprint prioritizes the student-to-allocation path: eligibility, credit bidding, preference submission, constraint validation, and allocation. Registrar configuration and reporting remain in the backlog because they support the core flow but are not prerequisites for demonstrating the allocation process.
 
-## 3. How did the simulated sprint align with the plan?
+## 3. How did the simulated sprint align with your plan?
 
-The sprint completed all six selected stories and delivered 26 story points within the one-week simulation. Work was ordered from the telemetry foundation through detection, notification, escalation, and caregiver response. This sequencing reduced dependency risk because downstream alert behavior relied on the earlier monitoring and threshold capabilities.
+Sprint 1 commits to 23 points across five stories. The order follows the dependency chain from viewing eligible electives through credit validation, preference submission, constraint checking, and final allocation. The simulation reaches zero remaining points by Day 6.
 
 ## 4. What insights did the burndown chart give about team capacity?
 
-The burndown shows a steady reduction from 26 to 0 points, with a slightly faster finish near the end of the sprint. The simulated capacity was sufficient for the selected commitment, but the two unselected stories show that the team should avoid filling the sprint beyond its demonstrated capacity. A real Jira burndown would also reveal delays, scope changes, and whether work was completed evenly rather than updated in batches.
+The burndown shows that a 23-point commitment is achievable within one week in the simulation. The remaining three backlog stories should be reserved for a later sprint unless the team has additional capacity. A real Jira chart would reveal delays, scope changes, or uneven completion.
 

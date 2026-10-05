@@ -1,69 +1,42 @@
-# Software Engineering Lab 2 - Jira Backlog and Sprint Simulation
+# Lab 2 Jira Backlog
 
 **Student:** Dhyan Rao  
 **SRN:** PES1UG24AM090  
-**Course:** Software Engineering  
-**Section:** B  
-**Product:** Remote Patient Vitals Alert & Monitoring App
+**Course:** Software Engineering, Section B  
+**Product:** Academic Elective Bidding & Allocation System
 
-## Jira setup
+## Epics
 
-- Project name: Remote Patient Vitals Monitoring
-- Suggested project key: RPVM
-- Template: Scrum
-- Project type: Company-managed
-- Sprint: Sprint 1
-- Sprint duration: 1 week
+### EPIC-1: Student Bidding and Preferences
 
-## Epics and user stories
+Allow students to view eligible electives, rank choices, and allocate bidding credits.
 
-### EPIC-1: Continuous Vital Telemetry
+### EPIC-2: Eligibility and Allocation Engine
 
-Enable reliable collection and viewing of remote patient vital readings.
+Validate prerequisites and allocate seats using bids, preferences, capacities, and timetable constraints.
 
-| ID | User story | Priority | Story points | Lab 1 link |
-|---|---|---:|---:|---|
-| US-001 | As a Remote Patient, I want my registered device to send timestamped SpO2, heart-rate, and blood-pressure readings so that my caregiver can monitor me remotely. | High | 5 | FR-001 |
-| US-002 | As an On-Call Caregiver, I want to view current and recent patient vitals so that I can assess the patient's condition. | Medium | 3 | FR-005 |
+### EPIC-3: Registrar Configuration and Oversight
 
-### EPIC-2: Threshold Detection and Alerts
+Allow the Academic Registrar to configure offerings and review allocation outcomes.
 
-Detect abnormal readings and provide actionable alert information.
+### EPIC-4: Results and Notifications
 
-| ID | User story | Priority | Story points | Lab 1 link |
-|---|---|---:|---:|---|
-| US-003 | As an On-Call Caregiver, I want every valid reading evaluated against the patient's active clinical thresholds so that anomalies are detected consistently. | High | 5 | FR-002 |
-| US-004 | As an On-Call Caregiver, I want a threshold-breach alert to show the metric, value, threshold, patient, and time so that I can respond quickly. | High | 5 | FR-003 |
+Publish allocation results, waitlists, exceptions, and notifications to students.
 
-### EPIC-3: Caregiver Notification and Escalation
+## User Stories
 
-Deliver alerts to the correct caregiver and escalate emergencies when necessary.
+| ID | Epic | User story | Priority | Points | Lab 1 link | Sprint |
+|---|---|---|---:|---:|---|---|
+| US-001 | Student Bidding and Preferences | As a Student, I want to view electives for which I satisfy prerequisites so that I only bid on eligible courses. | High | 3 | FR-001 | Sprint 1 |
+| US-002 | Student Bidding and Preferences | As a Student, I want to distribute exactly 100 bidding credits across ranked electives so that my bids are valid. | High | 5 | FR-001 | Sprint 1 |
+| US-003 | Student Bidding and Preferences | As a Student, I want to save, edit, and submit my ranked preferences before the deadline so that my choices are recorded. | High | 5 | FR-002 | Sprint 1 |
+| US-004 | Eligibility and Allocation Engine | As the Allocation Engine, I want to validate prerequisites, credit totals, capacities, and timetable conflicts so that invalid allocations are rejected. | High | 5 | FR-003 | Sprint 1 |
+| US-005 | Eligibility and Allocation Engine | As an Academic Registrar, I want to run allocation using bids, rank, capacity, and conflict rules so that seats are assigned fairly. | High | 5 | FR-003 | Sprint 1 |
+| US-006 | Registrar Configuration and Oversight | As an Academic Registrar, I want to configure offerings, capacities, prerequisites, windows, and schedules so that each term's rules are current. | Medium | 3 | FR-004 | Backlog |
+| US-007 | Results and Notifications | As a Student, I want to view my allocation or waitlist result so that I can plan my timetable. | Medium | 3 | FR-005 | Backlog |
+| US-008 | Results and Notifications | As an Academic Registrar, I want allocation, conflict, and audit views so that I can review exceptions and explain decisions. | Low | 3 | FR-005 | Backlog |
 
-| ID | User story | Priority | Story points | Lab 1 link |
-|---|---|---:|---:|---|
-| US-005 | As an assigned On-Call Caregiver, I want to receive an immediate notification for a critical alert so that I can begin a response. | High | 3 | FR-004 |
-| US-006 | As a member of the care team, I want an unacknowledged critical alert escalated through the caregiver matrix so that emergencies are not missed. | High | 5 | FR-004 |
+## Sprint 1 simulation
 
-### EPIC-4: Alert Response and Audit
-
-Record the caregiver's response and preserve an accountable history.
-
-| ID | User story | Priority | Story points | Lab 1 link |
-|---|---|---:|---:|---|
-| US-007 | As an On-Call Caregiver, I want to acknowledge an alert and record an action or note so that the response is documented. | Medium | 3 | FR-005 |
-| US-008 | As an On-Call Caregiver, I want alert acknowledgements and notification attempts recorded with timestamps so that the event history is traceable. | Low | 3 | FR-005 |
-
-## Sprint 1 plan
-
-Sprint 1 is a one-week simulation. The selected stories are US-001, US-003, US-004, US-005, US-006, and US-007 for a total commitment of **26 story points**. The lower-priority US-002 and US-008 remain in the backlog.
-
-| Day | Board activity | Remaining points |
-|---|---|---:|
-| Day 1 | Sprint started; all selected work is To Do | 26 |
-| Day 2 | US-001 moved to Done | 21 |
-| Day 3 | US-003 moved to Done | 16 |
-| Day 4 | US-004 moved to Done | 11 |
-| Day 5 | US-005 moved to Done | 8 |
-| Day 6 | US-006 moved to Done | 3 |
-| Day 7 | US-007 moved to Done; Sprint completed | 0 |
+Create a one-week Sprint 1 with US-001 through US-005 for a total commitment of **23 story points**. Keep US-006 through US-008 in the backlog. Move selected stories To Do -> In Progress -> Done and capture the real Jira burndown chart.
 

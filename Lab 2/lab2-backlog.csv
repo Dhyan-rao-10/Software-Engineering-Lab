@@ -1,9 +1,9 @@
 Epic,Story ID,Summary,User Story,Priority,Story Points,Lab 1 Requirement,Sprint
-EPIC-1,US-001,Ingest patient telemetry,"As a Remote Patient, I want my registered device to send timestamped SpO2, heart-rate, and blood-pressure readings so that my caregiver can monitor me remotely.",High,5,FR-001,Sprint 1
-EPIC-1,US-002,View current and recent vitals,"As an On-Call Caregiver, I want to view current and recent patient vitals so that I can assess the patient's condition.",Medium,3,FR-005,Backlog
-EPIC-2,US-003,Evaluate clinical thresholds,"As an On-Call Caregiver, I want every valid reading evaluated against the patient's active clinical thresholds so that anomalies are detected consistently.",High,5,FR-002,Sprint 1
-EPIC-2,US-004,Generate actionable alerts,"As an On-Call Caregiver, I want a threshold-breach alert to show the metric, value, threshold, patient, and time so that I can respond quickly.",High,5,FR-003,Sprint 1
-EPIC-3,US-005,Notify assigned caregiver,"As an assigned On-Call Caregiver, I want to receive an immediate notification for a critical alert so that I can begin a response.",High,3,FR-004,Sprint 1
-EPIC-3,US-006,Escalate unacknowledged alerts,"As a member of the care team, I want an unacknowledged critical alert escalated through the caregiver matrix so that emergencies are not missed.",High,5,FR-004,Sprint 1
-EPIC-4,US-007,Acknowledge and record response,"As an On-Call Caregiver, I want to acknowledge an alert and record an action or note so that the response is documented.",Medium,3,FR-005,Sprint 1
-EPIC-4,US-008,Maintain alert audit history,"As an On-Call Caregiver, I want alert acknowledgements and notification attempts recorded with timestamps so that the event history is traceable.",Low,3,FR-005,Backlog
+Student Bidding and Preferences,US-001,View eligible electives,"As a Student, I want to view electives for which I satisfy prerequisites so that I only bid on eligible courses.",High,3,FR-001,Sprint 1
+Student Bidding and Preferences,US-002,Distribute 100 bidding credits,"As a Student, I want to distribute exactly 100 bidding credits across ranked electives so that my bids are valid.",High,5,FR-001,Sprint 1
+Student Bidding and Preferences,US-003,Save and submit ranked preferences,"As a Student, I want to save, edit, and submit my ranked preferences before the deadline so that my choices are recorded.",High,5,FR-002,Sprint 1
+Eligibility and Allocation Engine,US-004,Validate allocation constraints,"As the Allocation Engine, I want to validate prerequisites, credit totals, capacities, and timetable conflicts so that invalid allocations are rejected.",High,5,FR-003,Sprint 1
+Eligibility and Allocation Engine,US-005,Run elective allocation,"As an Academic Registrar, I want to run allocation using bids, rank, capacity, and conflict rules so that seats are assigned fairly.",High,5,FR-003,Sprint 1
+Registrar Configuration and Oversight,US-006,Configure offerings and rules,"As an Academic Registrar, I want to configure offerings, capacities, prerequisites, windows, and schedules so that each term's rules are current.",Medium,3,FR-004,Backlog
+Results and Notifications,US-007,View allocation result,"As a Student, I want to view my allocation or waitlist result so that I can plan my timetable.",Medium,3,FR-005,Backlog
+Results and Notifications,US-008,Review audit and conflict views,"As an Academic Registrar, I want allocation, conflict, and audit views so that I can review exceptions and explain decisions.",Low,3,FR-005,Backlog

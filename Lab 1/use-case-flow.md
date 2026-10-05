@@ -1,44 +1,43 @@
 # Use-Case Flow Specification
 
-## UC-01: Monitor Patient Vitals and Escalate Alerts
+## UC-01: Submit Elective Bids and Preferences
 
-**System:** Remote Patient Vitals Alert & Monitoring App  
-**Primary actor:** On-Call Caregiver  
-**Supporting actors:** Remote Patient, Vital Signs Device, Notification Gateway
+**System:** Academic Elective Bidding & Allocation System  
+**Primary actor:** Student  
+**Supporting actor:** Academic Registrar
 
 ### Goal
 
-Continuously evaluate a patient's vital telemetry and notify the appropriate caregiver when a clinical threshold is breached.
+Allow a student to submit a valid, ranked elective preference list using exactly 100 bidding credits.
 
 ### Preconditions
 
-1. The patient is registered and linked to a monitoring device.
-2. SpO2, heart-rate, and blood-pressure thresholds are configured.
-3. An on-call caregiver and escalation order are configured.
-4. The device and telemetry gateway are connected.
+1. The student is authenticated and enrolled for the term.
+2. The registrar has published eligible elective offerings, prerequisites, capacities, and the bidding deadline.
+3. The bidding window is open.
 
 ### Postconditions
 
-**Success:** The reading is stored, the threshold result is recorded, and any required alert is delivered to the assigned caregiver.  
-**Failure:** The system records the failure and makes the telemetry or alert status visible for follow-up.
+**Success:** The valid preference list is stored with a submission timestamp and becomes available to the allocation process.  
+**Failure:** No invalid submission is stored as final; validation messages explain what the student must correct.
 
 ### Main Success Scenario
 
-1. The Vital Signs Device sends a timestamped SpO2, heart-rate, or blood-pressure reading.
-2. The system authenticates the device and associates the reading with the correct patient.
-3. The system stores the reading and evaluates it against the patient's active thresholds.
-4. The system determines that the reading breaches a threshold.
-5. The system creates a critical or non-critical alert containing the metric, value, threshold, patient, and timestamp.
-6. The system sends the alert to the assigned On-Call Caregiver through the Notification Gateway.
-7. The caregiver views the alert and current patient vitals.
-8. The caregiver acknowledges the alert and records the action taken.
-9. The system records the acknowledgement, action, and event time in the audit history.
+1. The student opens the elective bidding page.
+2. The system displays available electives and the student's eligibility status.
+3. The student selects electives and assigns a preference rank to each one.
+4. The student distributes bidding credits across the selected preferences.
+5. The student saves the draft.
+6. The system validates that the credit total is exactly 100 and that all prerequisites are satisfied.
+7. The student reviews the summary and submits the preferences.
+8. The system records the submission timestamp and locks the final submission for allocation.
+9. The system displays a confirmation reference to the student.
 
-### Alternate Flow: AF-01 - Critical Alert Is Not Acknowledged
+### Alternate Flow: AF-01 - Invalid Credits or Prerequisite
 
-1. At Step 7, the caregiver does not acknowledge the critical alert within the configured interval.
-2. The system marks the alert as unacknowledged and identifies the next caregiver in the escalation matrix.
-3. The system sends the alert and escalation context to the next caregiver.
-4. The system repeats escalation according to the configured matrix until a caregiver acknowledges the alert or the escalation list is exhausted.
-5. The system records every notification attempt and escalation event.
+1. At Step 6, the system detects that the credits do not total 100 or that a selected elective has an unmet prerequisite.
+2. The system highlights the invalid elective or credit total and explains the correction required.
+3. The student edits the credit distribution or removes/replaces the ineligible elective.
+4. The system revalidates the draft.
+5. If validation succeeds, the flow resumes at Step 7; otherwise, the system keeps the draft unsubmitted.
 
