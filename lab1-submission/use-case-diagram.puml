@@ -1,0 +1,46 @@
+@startuml
+title Remote Patient Vitals Alert & Monitoring App - UML Use-Case Diagram
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "Remote Patient" as Patient
+actor "On-Call Caregiver" as Caregiver
+actor "Vital Signs Device" as Device
+actor "Notification Gateway" as Gateway
+
+rectangle "Remote Patient Vitals Alert & Monitoring App" {
+  usecase "Monitor Patient Vitals" as Monitor
+  usecase "Ingest Vital Telemetry" as Ingest
+  usecase "Evaluate Clinical Thresholds" as Evaluate
+  usecase "Generate Vital Alert" as Generate
+  usecase "Notify On-Call Caregiver" as Notify
+  usecase "Escalate Unacknowledged\nCritical Alert" as Escalate
+  usecase "View Patient Vitals" as View
+  usecase "Acknowledge Alert" as Acknowledge
+  usecase "Record Care Action\nor Note" as Record
+}
+
+Patient --> View
+Patient --> Monitor
+Device --> Ingest
+Caregiver --> View
+Caregiver --> Acknowledge
+Caregiver --> Record
+Gateway --> Notify
+
+Monitor .> Ingest : <<include>>
+Monitor .> Evaluate : <<include>>
+Evaluate .> Generate : <<include>>
+Generate .> Notify : <<include>>
+Escalate .> Notify : <<extend>>
+View .> Monitor : <<include>>
+Record .> Acknowledge : <<extend>>
+
+note right of Escalate
+Extension point:
+critical alert remains
+unacknowledged
+end note
+@enduml
+
