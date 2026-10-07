@@ -10,8 +10,5 @@ Layered Architecture was selected because the kiosk has a compact, stable workfl
 
 ## Files
 
-- `component-diagram.drawio` - editable diagrams.net source
 - `component-diagram.png` - diagram image export
-- `component-diagram.pdf` - diagram PDF export
-- `lab3-justification.docx` - one-page written justification
 - `lab3-justification.pdf` - PDF version of the written justification
